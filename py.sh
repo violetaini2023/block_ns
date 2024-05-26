@@ -60,6 +60,16 @@ function is_exists_python() {
     fi
 }
 
+# 检测Python版本
+python_version=$(python --version 2>&1)
+
+# 检查是否安装了Python
+if [[ $? -eq 0 ]]; then
+    echo "Python已安装，版本为：$python_version"
+else
+    echo "Python未安装"
+fi
+
 cat << END
     欢迎使用python管理器。请选择你需要的使用的功能
     1.安装python(可选择版本:https://www.python.org/ftp/python)
