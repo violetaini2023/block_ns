@@ -61,7 +61,7 @@ function is_exists_python() {
 }
 
 # 检测Python版本
-python_version=$(python --version 2>&1)
+python_version=$(python3 --version 2>&1)
 
 # 检查是否安装了Python
 if [[ $? -eq 0 ]]; then
