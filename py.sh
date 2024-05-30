@@ -68,17 +68,10 @@ if [[ $? -eq 0 ]]; then
     echo "Python已安装，版本为：$python_version"
 else
     echo "Python未安装"
+    install_now
 fi
 
-cat << END
-    欢迎使用python管理器。请选择你需要的使用的功能
-    1.安装python(可选择版本:https://www.python.org/ftp/python)
-END
-
-read parameter
-echo "你选择了:$parameter"
-if [ "$parameter" -eq "1" ];then
-    version="3.9.9"
+function install_now() {
     #检测有效性
     v=(${version//./ })
     
@@ -143,3 +136,4 @@ if [ "$parameter" -eq "1" ];then
     exit 0
     fi
 fi
+}
